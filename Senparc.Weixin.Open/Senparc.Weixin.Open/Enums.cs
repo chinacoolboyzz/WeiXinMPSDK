@@ -46,6 +46,14 @@ namespace Senparc.Weixin.Open
         /// </summary>
         component_verify_ticket,
         /// <summary>
+        /// 推送授权成功通知
+        /// </summary>
+        authorized,
+        /// <summary>
+        /// 推送更新授权通知
+        /// </summary>
+        updateauthorized,
+        /// <summary>
         /// 推送取消授权通知
         /// </summary>
         unauthorized
