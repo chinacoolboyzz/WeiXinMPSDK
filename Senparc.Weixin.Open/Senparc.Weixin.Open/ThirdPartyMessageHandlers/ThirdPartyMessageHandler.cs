@@ -97,6 +97,18 @@ namespace Senparc.Weixin.Open.MessageHandlers
                             ResponseMessageText = OnComponentVerifyTicketRequest(requestMessage);
                         }
                         break;
+                    case RequestInfoType.authorized:
+                        {
+                            var requestMessage = RequestMessage as RequestMessageAuthorized;
+                            ResponseMessageText = OnAuthorizedRequest(requestMessage);
+                        }
+                        break;
+                    case RequestInfoType.updateauthorized:
+                        {
+                            var requestMessage = RequestMessage as RequestMessageUpdateauthorized;
+                            ResponseMessageText = OnUpdateauthorizedRequest(requestMessage);
+                        }
+                        break;     
                     case RequestInfoType.unauthorized:
                         {
                             var requestMessage = RequestMessage as RequestMessageUnauthorized;
@@ -138,6 +150,25 @@ namespace Senparc.Weixin.Open.MessageHandlers
             return "success";
         }
 
+        /// <summary>
+        /// 推送授权成功通知
+        /// </summary>
+        /// <param name="requestMessage"></param>
+        /// <returns></returns>
+        public virtual string OnAuthorizedRequest(RequestMessageAuthorized requestMessage)
+        {
+            return "success";
+        }
+
+        /// <summary>
+        /// 推送更新授权通知
+        /// </summary>
+        /// <param name="requestMessage"></param>
+        /// <returns></returns>
+        public virtual string OnUpdateauthorizedRequest(RequestMessageUpdateauthorized requestMessage)
+        {
+            return "success";
+        }
         /// <summary>
         /// 推送取消授权通知
         /// </summary>
