@@ -18,6 +18,7 @@ namespace Senparc.Weixin.Open.Entities
     /// <summary>
     /// jsapi_ticket请求后的JSON返回格式
     /// </summary>
+    [Serializable]
     public class JsApiTicketResult : WxJsonResult
     {
         /// <summary>
